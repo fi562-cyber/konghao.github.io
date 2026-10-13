@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>孔皓 - 个人简历 (ICT / 网络安全 / 商务信息系统实习生)</title>
+    <style>
+        :root {
+            --primary-color: #003366; /* 经典的深蓝色 */
+            --secondary-color: #f4f7f6; /* 背景浅灰 */
+            --accent-color: #0066cc; /* 科技蓝点缀 */
+            --text-main: #333333;
+            --text-light: #555555;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft YaHei', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* 简历主容器 */
+        .resume-container {
+            max-width: 960px;
+            margin: 30px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 顶部 Header */
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 35px 45px;
+            position: relative;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .header-title h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .header-title .english-name {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-left: 10px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .header-title p {
+            font-size: 1.1rem;
+            color: #add8e6;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        /* 状态标签 */
+        .status-badges {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .badge {
+            background-color: #0066cc;
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .badge.green {
+            background-color: #2ec4b6;
+        }
+
+        /* 联络信息 */
+        header address {
+            font-style: normal;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        header address span {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .school-badge {
+            position: absolute;
+            top: 35px;
+            right: 45px;
+            text-align: right;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 6px;
+            border-right: 4px solid #fff;
+        }
+
+        .school-badge strong {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        /* 双栏布局 */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* 左侧边栏 */
+        .sidebar {
+            flex: 1 1 300px;
+            background-color: #f9fbfb;
+            padding: 35px 30px;
+            border-right: 1px solid var(--border-color);
+        }
+
+        /* 右侧主栏 */
+        .content {
+            flex: 2 1 600px;
+            padding: 35px 40px;
+        }
+
+        /* 模块样式 */
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 6px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        section h2::before {
+            content: "■";
+            font-size: 0.8rem;
+            color: var(--accent-color);
+        }
+
+        /* 经历项 */
+        article {
+            margin-bottom: 22px;
+        }
+
+        article h3 {
+            font-size: 1.05rem;
+            color: #111;
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style-type: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 6px;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* 技能标签（侧边栏） */
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .skill-group h4 {
+            font-size: 0.95rem;
+            color: #222;
+            margin-bottom: 6px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tags span {
+            background-color: #f0f4f8;
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            border-left: 2px solid var(--accent-color);
+        }
+
+        /* 成绩网格布局 */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .course-item {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        .course-item h4 {
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 2px;
+        }
+
+        .course-item .grade {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .course-item .grade span {
+            background-color: #e6f0fa;
+            padding: 1px 6px;
+            border-radius: 3px;
+        }
+
+        /* 打印适配 */
+        @media print {
+            body { background: #fff; }
+            .resume-container { box-shadow: none; margin: 0; max-width: 100%; }
+        }
+
+        /* 移动端响应式 */
+        @media (max-width: 768px) {
+            .school-badge { position: static; text-align: left; margin-top: 15px; display: inline-block; border-right: none; border-left: 4px solid #fff;}
+            .main-content { flex-direction: column; }
+            .sidebar { border-right: none; border-bottom: 1px solid var(--border-color); }
+            .course-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        
+        <header>
+            <div class="header-top">
+                <div class="header-title">
+                    <h1>孔皓 <span class="english-name">Kong Hao</span></h1>
+                    <p>求职意向：ICT、网络安全、系统分析与设计相关岗位实习生</p>
+                    <div class="status-badges">
+                        <span class="badge">2026 届毕业生 · 12 月毕业</span>
+                        <span class="badge green">随时到岗 / 寻找实习</span>
+                    </div>
+                </div>
+                <div class="school-badge">
+                    <strong>Murdoch University</strong><br>
+                    <span style="font-size: 0.9rem; opacity: 0.9;">澳大利亚默多克大学</span>
+                </div>
+            </div>
+            
+            <address>
+                <span>📞 (+86) 158-0431-5141</span>
+                <span>📧 1516440682@qq.com</span>
+                <span>📍 居住地：吉林（支持全国派遣及远程工作）</span>
+                <span>🔗 GitHub / LinkedIn (链接待更新)</span>
+            </address>
+        </header>
+
+        <div class="main-content">
+            
+            <!-- 左侧边栏 -->
+            <div class="sidebar">
+                <section>
+                    <h2>教育背景</h2>
+                    <article>
+                        <h3 style="font-size: 1.1rem; color: var(--primary-color);">默多克大学 (Murdoch University)</h3>
+                        <div class="date" style="margin-top: 4px; font-weight: bold;">2024 - 2026.12 (预计毕业)</div>
+                        <div class="subtitle" style="font-size: 0.9rem; margin: 8px 0; color: #333;">信息技术学士 (Bachelor of IT)</div>
+                        <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.5;">
+                            <strong>核心专业：</strong>网络安全与取证 (Cyber Forensics) & 商业信息系统 (Business Information Systems) 双专业
+                        </p>
+                    </article>
+                </section>
+
+                <section>
+                    <h2>核心技能栈</h2>
+                    <div class="skills-list">
+                        <div class="skill-group">
+                            <h4>🛡 数字取证与安全</h4>
+                            <div class="skill-tags">
+                                <span>数字取证 (Cyber Forensics)</span>
+                                <span>FTK Imager / Autopsy</span>
+                                <span>Wireshark</span>
+                                <span>防火墙 / IDPS / 蜜网</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>📊 架构与系统分析</h4>
+                            <div class="skill-tags">
+                                <span>企业架构 (TOGAF/Zachman)</span>
+                                <span>系统分析与设计 (SAD)</span>
+                                <span>人机交互原理 (HCI)</span>
+                                <span>工作流建模</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>💻 开发与数据分析</h4>
+                            <div class="skill-tags">
+                                <span>C 语言 (内存管理/指针)</span>
+                                <span>商业智能开发 (BI)</span>
+                                <span>维度建模 / 星型架构</span>
+                                <span>SQL / ETL 流程</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>综合素质</h2>
+                    <ul>
+                        <li>熟练掌握专业英语读写，能无缝阅读并撰写全英文技术文档。</li>
+                        <li>具备跨文化团队沟通与项目协作能力。</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- 右侧主栏 -->
+            <div class="content">
+                <section>
+                    <h2>专业课程与核心成绩</h2>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 12px;">
+                        * 核心课程评级稳健，具备扎实的理论与工程基础 (C - Credit, P - Pass)：
+                    </p>
+                    <div class="course-grid">
+                        <div class="course-item">
+                            <h4>IT 职业实践项目 (ICT302)</h4>
+                            <div class="grade"><span>成绩: 68 (C)</span></div>
+                        </div>
+                        <div class="course-item">
+                            <h4>构建就业技能 (MSP200)</h4>
+                            <div class="grade"><span>成绩: 66 (C)</span></div>
+                        </div>
+                        <div class="course-item">
+                            <h4>安全架构与控制 (ICT279)</h4>
+                            <div class="grade"><span>成绩: 58 (P)</span></div>
+                        </div>
+                        <div class="course-item">
+                            <h4>IT 项目管理 (ICT201)</h4>
+                            <div class="grade"><span>成绩: 55 (P)</span></div>
+                        </div>
+                        <div class="course-item">
+                            <h4>信息安全策略与治理 (ICT280)</h4>
+                            <div class="grade"><span>成绩: 54 (P)</span></div>
+                        </div>
+                        <div class="course-item">
+                            <h4>数据库管理 (ICT285)</h4>
+                            <div class="grade"><span>成绩: 54 (P)</span></div>
+                        </div>
+                        <div class="course-item">
+                            <h4>信息系统管理 (ICT292)</h4>
+                            <div class="grade"><span>成绩: 52 (P)</span></div>
+                        </div>
+                        <div class="course-item">
+                            <h4>高级商务分析与设计 (ICT393)</h4>
+                            <div class="grade"><span>成绩: 51 (P)</span></div>
+                        </div>
+                        <div class="course-item">
+                            <h4>网络取证与事件响应 (ICT378)</h4>
+                            <div class="grade"><span>成绩: 50 (P)</span></div>
+                        </div>
+                        <div class="course-item">
+                            <h4>商业智能应用开发 (ICT394)</h4>
+                            <div class="grade"><span>成绩: 50 (P)</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>项目与实操经历</h2>
+                    <article>
+                        <h3>商业智能与数据可视化分析项目 <span class="date">2026.04 (ICT394)</span></h3>
+                        <div class="subtitle">数据建模与可视化开发</div>
+                        <ul>
+                            <li>基于维度数据建模和星型拓扑（Star Schema）架设底层数据结构，独立完成 ETL 流程设计。</li>
+                            <li>使用 BI 工具对跨群体的 ICT 增长趋势及专利产出进行可视化分析，评估研发效率。</li>
+                            <li>撰写并交付诊断性数据洞察报告，为商业决策层提供数据支撑。</li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <h3>医疗数字化转型企业架构 (EA) 设计 <span class="date">2026.03 (ICT301)</span></h3>
+                        <div class="subtitle">架构设计组员</div>
+                        <ul>
+                            <li>对标 TOGAF 及 Zachman 框架，参与评估并规划新加坡医疗体系的混合云部署方案。</li>
+                            <li>负责核心架构图纸的输出，包括“系统接口图 (System Interface Diagram)”及未来技术架构场景层构建。</li>
+                            <li>梳理业务线与技术栈的对齐关系，确保架构方案满足数字化扩展需求。</li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <h3>自动化采购申请工作流系统设计 <span class="date">2025.10 (ICT292)</span></h3>
+                        <div class="subtitle">系统分析与交互规划</div>
+                        <ul>
+                            <li>协同团队设计多层级审批的自动化采购流转系统，撰写详细的系统分析与设计概览文档。</li>
+                            <li>运用人机交互 (HCI) 理论（如 Shneiderman 八大黄金法则）优化业务系统的界面交互逻辑。</li>
+                            <li>重构信息传递流，提升了系统内部权限管控及审批流转的效率。</li>
+                        </ul>
+                    </article>
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
