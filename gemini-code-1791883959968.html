@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -245,7 +245,7 @@
             border-left: 2px solid var(--accent-color);
         }
 
-        /* 成绩网格布局 */
+        /* 核心课程网格布局 */
         .course-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -263,19 +263,6 @@
         .course-item h4 {
             font-size: 0.9rem;
             color: #333;
-            margin-bottom: 2px;
-        }
-
-        .course-item .grade {
-            font-size: 0.8rem;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-        
-        .course-item .grade span {
-            background-color: #e6f0fa;
-            padding: 1px 6px;
-            border-radius: 3px;
         }
 
         /* 打印适配 */
@@ -382,50 +369,28 @@
             <!-- 右侧主栏 -->
             <div class="content">
                 <section>
-                    <h2>专业课程与核心成绩</h2>
-                    <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 12px;">
-                        * 核心课程评级稳健，具备扎实的理论与工程基础 (C - Credit, P - Pass)：
-                    </p>
+                    <h2>核心专业课程</h2>
                     <div class="course-grid">
                         <div class="course-item">
-                            <h4>IT 职业实践项目 (ICT302)</h4>
-                            <div class="grade"><span>成绩: 68 (C)</span></div>
+                            <h4>安全架构与控制</h4>
                         </div>
                         <div class="course-item">
-                            <h4>构建就业技能 (MSP200)</h4>
-                            <div class="grade"><span>成绩: 66 (C)</span></div>
+                            <h4>信息安全策略与治理</h4>
                         </div>
                         <div class="course-item">
-                            <h4>安全架构与控制 (ICT279)</h4>
-                            <div class="grade"><span>成绩: 58 (P)</span></div>
+                            <h4>网络取证与事件响应</h4>
                         </div>
                         <div class="course-item">
-                            <h4>IT 项目管理 (ICT201)</h4>
-                            <div class="grade"><span>成绩: 55 (P)</span></div>
+                            <h4>数据库管理</h4>
                         </div>
                         <div class="course-item">
-                            <h4>信息安全策略与治理 (ICT280)</h4>
-                            <div class="grade"><span>成绩: 54 (P)</span></div>
+                            <h4>信息系统管理</h4>
                         </div>
                         <div class="course-item">
-                            <h4>数据库管理 (ICT285)</h4>
-                            <div class="grade"><span>成绩: 54 (P)</span></div>
+                            <h4>高级商务分析与设计</h4>
                         </div>
                         <div class="course-item">
-                            <h4>信息系统管理 (ICT292)</h4>
-                            <div class="grade"><span>成绩: 52 (P)</span></div>
-                        </div>
-                        <div class="course-item">
-                            <h4>高级商务分析与设计 (ICT393)</h4>
-                            <div class="grade"><span>成绩: 51 (P)</span></div>
-                        </div>
-                        <div class="course-item">
-                            <h4>网络取证与事件响应 (ICT378)</h4>
-                            <div class="grade"><span>成绩: 50 (P)</span></div>
-                        </div>
-                        <div class="course-item">
-                            <h4>商业智能应用开发 (ICT394)</h4>
-                            <div class="grade"><span>成绩: 50 (P)</span></div>
+                            <h4>商业智能应用开发</h4>
                         </div>
                     </div>
                 </section>
